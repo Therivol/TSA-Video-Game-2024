@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 754327518810919111}
   - component: {fileID: 1868172709434539867}
   - component: {fileID: 5902358496701317589}
+  - component: {fileID: -329778586772739487}
+  - component: {fileID: 3007536891048087281}
   m_Layer: 7
   m_Name: Vampire
   m_TagString: Untagged
@@ -153,6 +155,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.92810166, y: 0.8928044}
   m_EdgeRadius: 0
+--- !u!50 &-329778586772739487
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777184098075828481}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &3007536891048087281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777184098075828481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1591efd925a3c44a7b17084d501ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  batPrefab: {fileID: 2495438824980015505, guid: 29df2a1e4ad45194db6a222a086b001d, type: 3}
 --- !u!1 &3265456085339099028
 GameObject:
   m_ObjectHideFlags: 0

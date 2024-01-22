@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
     
-    public Rigidbody2D rb;
-    public Animator animator;
+    private Rigidbody2D rb;
+    private Animator animator;
 
     Vector2 movement;
 
-    // Update is called once per frame
+    [SerializeField] private GameObject garlicPrefab;
+    [SerializeField] private Transform releasePoint;
+
+
+    void Start() {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -32,6 +40,22 @@ public class PlayerMovement : MonoBehaviour
 
         movement.Normalize();
 
+        if (Input.GetMouseButtonDown(0)) {
+            ThrowGarlic();
+        }
+    }
+
+    private void ThrowGarlic() {
+
+        animator.Play("Player_Throw", 0, 0f);
+        
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 aimDirection = mousePos - rb.position;
+
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        releasePoint.rotation = Quaternion.Euler(0f, 0f, aimAngle);
+        
+        Instantiate(garlicPrefab, releasePoint.position, releasePoint.rotation);
     }
 
     void FixedUpdate() 
