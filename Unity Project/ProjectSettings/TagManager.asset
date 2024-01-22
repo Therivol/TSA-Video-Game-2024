@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Terrain
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Tiles
+    uniqueID: 2086370009
+    locked: 0
+  - name: Details
+    uniqueID: 3044576633
+    locked: 0
+  - name: Shadows
+    uniqueID: 3093584219
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
