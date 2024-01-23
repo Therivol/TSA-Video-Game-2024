@@ -6,9 +6,18 @@ public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats playerStats;
 
-    public float health;
-    public float maxHealth;
     public GameObject player;
+
+    public float currentMana = 100f;
+    public float maxMana = 100f;
+    public float mps = 10f;
+    public float manaUseRate = 50f;
+    public float lightDPS = 200f;
+
+    public float currentAmmo = 10f;
+    public float maxAmmo = 10f;
+    public float throwingSpeed = 0.25f;
+    public float ammoRegen = 0.5f;
 
     void Awake() {
         if (playerStats != null)
@@ -25,35 +34,7 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;
-    }
-
-    public void DealDamage(float damage)
-    {
-        health -= damage;
-        CheckDeath();
-    }
-
-    public void Heal(float amount)
-    {
-        health += amount;
-        CheckOverHeal();
-    }
-
-    public void CheckOverHeal()
-    {
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-        }
-    }
-
-    public void CheckDeath()
-    {
-        if (health <= 0)
-        {
-            Destroy(player);
-        }
+        
     }
 
     // Update is called once per frame

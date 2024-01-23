@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3916184058168702643}
   - component: {fileID: 1170325423297845586}
   - component: {fileID: -1811225126580321112}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Throwing Garlic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8232600875662432691}
   - component: {fileID: 1943669607392462267}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: little light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

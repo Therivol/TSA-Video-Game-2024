@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5902358496701317589}
   - component: {fileID: -329778586772739487}
   - component: {fileID: 3007536891048087281}
+  - component: {fileID: -4746055381488154807}
   m_Layer: 7
   m_Name: Vampire
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +126,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 374
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -142,7 +143,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0010351539, y: -0.5535978}
+  m_Offset: {x: 0.0024751425, y: -0.3031288}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -153,7 +154,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.92810166, y: 0.8928044}
+  m_Size: {x: 0.53291297, y: 0.8536826}
   m_EdgeRadius: 0
 --- !u!50 &-329778586772739487
 Rigidbody2D:
@@ -181,7 +182,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3007536891048087281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,8 +195,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1591efd925a3c44a7b17084d501ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 1.5
   batPrefab: {fileID: 2495438824980015505, guid: 29df2a1e4ad45194db6a222a086b001d, type: 3}
+  vampirePoofPrefab: {fileID: 4702137679977940891, guid: 06272b29420acdc4b99883c1db53594b, type: 3}
+  target: {fileID: 8025919530135599747, guid: 3decfaaee81597a43a1e5c5f16a5e618, type: 3}
+--- !u!61 &-4746055381488154807
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777184098075828481}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 758
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0010026693, y: -0.5655566}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8861263, y: 0.8688868}
+  m_EdgeRadius: 0
 --- !u!1 &3265456085339099028
 GameObject:
   m_ObjectHideFlags: 0
