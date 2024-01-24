@@ -17,7 +17,7 @@ public class VampireController : MonoBehaviour
     [SerializeField] private GameObject batPrefab;
     [SerializeField] private GameObject vampirePoofPrefab;
 
-    [SerializeField] private GameObject target;
+    [SerializeField] private Transform target;
 
     private float distance;
 
@@ -26,13 +26,14 @@ public class VampireController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        target = GameManager.gameManager.vampTarget;
     }
 
     // Update is called once per frame
     void Update()
     {
-        distance = Vector2.Distance(transform.position, target.transform.position);
-        Vector2 direction = (target.transform.position - transform.position);
+        distance = Vector2.Distance(transform.position, target.position);
+        Vector2 direction = (target.position - transform.position);
 
         movement = new Vector2(direction.x, direction.y);
         animator.SetFloat("Horizontal", movement.x);

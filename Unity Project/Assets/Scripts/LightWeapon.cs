@@ -17,6 +17,10 @@ public class LightWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Pause.isPaused) {
+            return;
+        }
+
         PlayerStats.playerStats.currentMana += PlayerStats.playerStats.mps * Time.deltaTime;
         if (PlayerStats.playerStats.currentMana > PlayerStats.playerStats.maxMana) {
             PlayerStats.playerStats.currentMana = PlayerStats.playerStats.maxMana;
@@ -39,6 +43,7 @@ public class LightWeapon : MonoBehaviour
 
     void EnableLight() 
     {
+        PlayerStats.playerStats.canMove = false;
         lightBeam.SetActive(true);
     }
 
@@ -59,6 +64,7 @@ public class LightWeapon : MonoBehaviour
 
     void DisableLight() 
     {
+        PlayerStats.playerStats.canMove = true;
         lightBeam.SetActive(false);
 
     }

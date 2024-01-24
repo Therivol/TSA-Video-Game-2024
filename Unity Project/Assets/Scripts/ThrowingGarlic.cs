@@ -12,6 +12,8 @@ public class ThrowingGarlic : MonoBehaviour
 
     [SerializeField] private GameObject impactEffect;
 
+    [SerializeField] private AudioClip hitVampireClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class ThrowingGarlic : MonoBehaviour
 
             case "Enemy":
             other.gameObject.GetComponent<VampireController>().TakeDamage(34);
+            SoundFXManager.instance.PlaySoundFXClip(hitVampireClip, transform, 1f);
             Impact();
             break;
         }

@@ -8,6 +8,8 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject player;
 
+    public bool canMove = true;
+
     public float currentMana = 100f;
     public float maxMana = 100f;
     public float mps = 10f;

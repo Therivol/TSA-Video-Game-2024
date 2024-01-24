@@ -130,6 +130,7 @@ MonoBehaviour:
   speed: 20
   lifeTime: 3
   impactEffect: {fileID: 2017824290663085165, guid: 55129c0d7588bdf4194877a382b8496a, type: 3}
+  hitVampireClip: {fileID: 8300000, guid: cdf5545b229263e4d92a9d976d96481f, type: 3}
 --- !u!58 &-1811225126580321112
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -23,6 +23,9 @@ public class GarlicWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Pause.isPaused) {
+            return;
+        }
         PlayerStats.playerStats.currentAmmo += PlayerStats.playerStats.ammoRegen * Time.deltaTime;
         if (PlayerStats.playerStats.currentAmmo > PlayerStats.playerStats.maxAmmo) {
             PlayerStats.playerStats.currentAmmo = PlayerStats.playerStats.maxAmmo;
