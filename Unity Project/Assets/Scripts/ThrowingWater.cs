@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThrowingWater : MonoBehaviour
 {
-    public float speed = 150f;
+    public float speed = 25f;
     public float lifeTime = 3f;
     public float damage = 50f;
 
@@ -34,7 +34,7 @@ public class ThrowingWater : MonoBehaviour
             break;
 
             case "Enemy":
-            other.gameObject.GetComponent<VampireController>().TakeDamage(50);
+            other.gameObject.GetComponent<VampireController>().TakeDamage(damage);
             SoundFXManager.instance.PlaySoundFXClip(hitVampireClip, transform, 1f);
             Impact();
             break;

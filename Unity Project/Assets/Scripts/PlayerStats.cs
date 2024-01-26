@@ -30,7 +30,6 @@ public class PlayerStats : MonoBehaviour
         {
             playerStats = this;
         }
-        DontDestroyOnLoad(this);
     }
 
     // Start is called before the first frame update

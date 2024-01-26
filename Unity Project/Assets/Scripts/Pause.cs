@@ -26,17 +26,25 @@ public class Pause : MonoBehaviour
         }
     }
 
-    public void PauseGame() {
-        isPaused = true;
-        pauseMenu.SetActive(true);
-        AudioListener.pause = true;
+    public static void Freeze() {
+        Pause.isPaused = true;
         Time.timeScale = 0f;
     }
 
+    public static void Unfreeze() {
+        Pause.isPaused = false;
+        Time.timeScale = 1f;
+    }
+
+    public void PauseGame() {
+        Freeze();
+        pauseMenu.SetActive(true);
+        AudioListener.pause = true;
+    }
+
     public void ResumeGame() {
-        isPaused = false;
+        Unfreeze();
         pauseMenu.SetActive(false);
         AudioListener.pause = false;
-        Time.timeScale = 1f;
     }
 }

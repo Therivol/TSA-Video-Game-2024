@@ -5,7 +5,6 @@ using UnityEngine;
 public class GateController : MonoBehaviour
 {
 
-    [SerializeField] private GameObject gameController;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +19,6 @@ public class GateController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) 
     {
         Destroy(other.gameObject);
-
+        GameManager.gameManager.vampEnter();
     }
 }

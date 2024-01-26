@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThrowingGarlic : MonoBehaviour
 {
 
-    public float speed = 100f;
+    public float speed = 20f;
     public float lifeTime = 3f;
 
     private Rigidbody2D rb;
