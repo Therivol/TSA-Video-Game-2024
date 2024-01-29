@@ -5,23 +5,18 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPrefab;
-
-    [SerializeField] private float spawnRate = 1f;
-
     [SerializeField] private BoxCollider2D spawnPlatform;
-
-    private bool canSpawn = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Spawner());
     }
 
-    private IEnumerator Spawner() {
-        WaitForSeconds wait = new WaitForSeconds(spawnRate);
+    public IEnumerator Spawner(int numEnemies) {
+        WaitForSeconds wait = new WaitForSeconds(GameManager.gameManager.spawnRate);
 
-        while (canSpawn) {
+        yield return new WaitForSeconds(Random.Range(0f, 2f));
+        for (int i = 0; i < numEnemies; i++) {
             yield return wait;
             Instantiate(spawnPrefab, GetRandomSpawnPosition(), Quaternion.identity);
         }

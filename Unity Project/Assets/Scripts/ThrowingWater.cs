@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class ThrowingWater : MonoBehaviour
 {
-    public float speed = 25f;
-    public float lifeTime = 3f;
-    public float damage = 50f;
+    private float lifeTime = 3f;
 
     private Rigidbody2D rb;
 
@@ -22,7 +20,7 @@ public class ThrowingWater : MonoBehaviour
     }
 
     void FixedUpdate() {
-        rb.velocity = transform.up * speed;
+        rb.velocity = transform.up * PlayerStats.playerStats.boltSpeed;
     }
 
     void OnTriggerEnter2D(Collider2D other) 
@@ -34,7 +32,7 @@ public class ThrowingWater : MonoBehaviour
             break;
 
             case "Enemy":
-            other.gameObject.GetComponent<VampireController>().TakeDamage(damage);
+            other.gameObject.GetComponent<VampireController>().TakeDamage(PlayerStats.playerStats.boltDamage);
             SoundFXManager.instance.PlaySoundFXClip(hitVampireClip, transform, 1f);
             Impact();
             break;

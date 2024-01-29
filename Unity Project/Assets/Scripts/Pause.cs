@@ -39,7 +39,7 @@ public class Pause : MonoBehaviour
     public void PauseGame() {
         Freeze();
         pauseMenu.SetActive(true);
-        AudioListener.pause = true;
+        // AudioListener.pause = true;
     }
 
     public void ResumeGame() {

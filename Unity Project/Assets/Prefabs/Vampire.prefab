@@ -195,10 +195,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1591efd925a3c44a7b17084d501ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.5
+  moveSpeed: 2
+  health: 100
   batPrefab: {fileID: 2495438824980015505, guid: 29df2a1e4ad45194db6a222a086b001d, type: 3}
   vampirePoofPrefab: {fileID: 4702137679977940891, guid: 06272b29420acdc4b99883c1db53594b, type: 3}
-  target: {fileID: 3538866422772451125, guid: 3decfaaee81597a43a1e5c5f16a5e618, type: 3}
+  powerUps:
+  - {fileID: 3407472585007653856, guid: bc8579e3e3f79e44cbbbefabbf9bf278, type: 3}
+  - {fileID: 7990466286592609429, guid: 0e189b2d4d1c9d647a65ad32b8515296, type: 3}
+  - {fileID: 5154278184732666634, guid: 976ce37fb6edde544acc2db5388869ca, type: 3}
 --- !u!61 &-4746055381488154807
 BoxCollider2D:
   m_ObjectHideFlags: 0

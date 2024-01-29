@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class CursorManager : MonoBehaviour
 {
+    private static CursorManager instance;
+
     [SerializeField] private Texture2D cursorHover;
     [SerializeField] private Texture2D cursorClick;
 
     private bool clicked = false;
 
     private Vector2 cursorHotspot;
-    // Start is called before the first frame update
+
+    private void Awake() {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         cursorHotspot = new Vector2(cursorHover.width / 2, cursorHover.height / 2);

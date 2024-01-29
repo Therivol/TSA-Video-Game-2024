@@ -7,6 +7,7 @@ public class ThrowingGarlic : MonoBehaviour
 
     public float speed = 20f;
     public float lifeTime = 3f;
+    [SerializeField] private float garlicDamage;
 
     private Rigidbody2D rb;
 
@@ -19,6 +20,7 @@ public class ThrowingGarlic : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, lifeTime);
+        garlicDamage = PlayerStats.playerStats.garlicDamage;
     }
 
     void FixedUpdate() {
@@ -34,8 +36,7 @@ public class ThrowingGarlic : MonoBehaviour
             break;
 
             case "Enemy":
-            other.gameObject.GetComponent<VampireController>().TakeDamage(34);
-            SoundFXManager.instance.PlaySoundFXClip(hitVampireClip, transform, 1f);
+            other.gameObject.GetComponent<VampireController>().TakeDamage(garlicDamage);
             Impact();
             break;
         }
@@ -43,6 +44,7 @@ public class ThrowingGarlic : MonoBehaviour
 
     void Impact()
     {
+        SoundFXManager.instance.PlaySoundFXClip(hitVampireClip, transform, 1f);
         Instantiate(impactEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

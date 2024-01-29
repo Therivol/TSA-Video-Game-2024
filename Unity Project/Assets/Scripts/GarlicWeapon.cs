@@ -38,7 +38,7 @@ public class GarlicWeapon : MonoBehaviour
 
     private void ThrowGarlic() {
 
-    if (PlayerStats.playerStats.currentAmmo >= 1f && (Time.time - lastTimeThrown) > PlayerStats.playerStats.throwingSpeed)
+    if (PlayerStats.playerStats.currentAmmo >= 1f && (Time.time - lastTimeThrown) > (1 / PlayerStats.playerStats.throwingSpeed))
         {
             PlayerStats.playerStats.currentAmmo--;
             lastTimeThrown = Time.time;

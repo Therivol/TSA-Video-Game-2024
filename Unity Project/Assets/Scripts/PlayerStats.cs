@@ -18,8 +18,20 @@ public class PlayerStats : MonoBehaviour
 
     public float currentAmmo = 10f;
     public float maxAmmo = 10f;
-    public float throwingSpeed = 0.25f;
+    public float baseThrowingSpeed = 3f;
+    public float throwingSpeed = 3f;
     public float ammoRegen = 0.5f;
+    public float garlicDamage = 75f;
+
+    public float moveSpeed = 6f;
+
+    public int speedCounter;
+    public int capacityCounter;
+    public int powerCounter;
+
+    public float boltDamage = 100f;
+    public float boltFreq = 0.4f;
+    public float boltSpeed = 75f;
 
     void Awake() {
         if (playerStats != null)

@@ -19,8 +19,7 @@ public class ElementalController : MonoBehaviour
     private float lastAttack;
     private float lastMove;
     private float moveFreq = 6f;
-    private float attackSpeed = 2f;
-    private float moveSpeed = 8f;
+    private float moveSpeed = 6f;
 
     private float moveRange = 3f;
 
@@ -43,7 +42,7 @@ public class ElementalController : MonoBehaviour
             if (Time.time - lastMove > moveFreq || Vector2.Distance(controller.position, transform.position) > 10f) {
                 Move();
             }
-            else if ((Time.time - lastAttack) > attackSpeed) {
+            else if ((Time.time - lastAttack) > 1 / PlayerStats.playerStats.boltFreq) {
                 Attack();
                 lastAttack = Time.time;
             }
@@ -51,11 +50,15 @@ public class ElementalController : MonoBehaviour
 
         else if (Vector2.Equals(new Vector2(transform.position.x, transform.position.y), newLocation)) {
             moving = false;
+            animator.SetFloat("LastHorizontal", 0);
+            animator.SetFloat("LastVertical", 0);
         }
         else {
             transform.position = Vector2.MoveTowards(transform.position, newLocation, moveSpeed * Time.deltaTime);
-            // animator.SetFloat("LastHorizontal", h);
-            // animator.SetFloat("LastVertical", v);
+            Vector2 direction = newLocation - new Vector2(transform.position.x, transform.position.y);
+            direction.Normalize();
+            animator.SetFloat("LastHorizontal", direction.x);
+            animator.SetFloat("LastVertical", direction.y);
         }
 
         
@@ -64,7 +67,7 @@ public class ElementalController : MonoBehaviour
     void Move() {
         moving = true;
         lastMove = Time.time;
-        newLocation = new Vector2(Random.Range(-moveRange, moveRange) + controller.position.x, Random.Range(-moveRange, moveRange) + controller.position.y);
+        newLocation = new Vector2(Random.Range(-moveRange, moveRange) + controller.position.x, Random.Range(-moveRange, 0) + controller.position.y);
     }
 
     public void ThrowBolt(Transform towards) 

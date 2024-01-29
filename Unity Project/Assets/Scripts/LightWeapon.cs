@@ -18,6 +18,7 @@ public class LightWeapon : MonoBehaviour
     void Update()
     {
         if (Pause.isPaused) {
+            DisableLight();
             return;
         }
 
