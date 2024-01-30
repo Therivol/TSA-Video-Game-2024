@@ -115,8 +115,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -2166,4 +2168,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Game.unity
   - Assets/Scenes/LoseScreen.unity
   - Assets/Scenes/Controls.unity
-  playerPath: C:/Users/Zander/Documents/GitHub/TSA-Video-Game/Unity Project/Builds/WebGL2
+  playerPath: C:/Users/Zander/Documents/GitHub/TSA-Video-Game/Unity Project/Builds/Final
